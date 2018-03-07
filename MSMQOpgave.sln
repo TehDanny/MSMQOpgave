@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "Sender\Sender.csproj", "{1A163257-6F68-443E-B760-EBF1C07261D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Receiver", "Receiver\Receiver.csproj", "{4BD1BA3A-19AB-49FD-9508-A20C016761A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Translator", "Translator\Translator.csproj", "{6A73066E-39E4-49B2-BD3C-5F6485C365A2}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A163257-6F68-443E-B760-EBF1C07261D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A163257-6F68-443E-B760-EBF1C07261D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A163257-6F68-443E-B760-EBF1C07261D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A163257-6F68-443E-B760-EBF1C07261D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD1BA3A-19AB-49FD-9508-A20C016761A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD1BA3A-19AB-49FD-9508-A20C016761A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD1BA3A-19AB-49FD-9508-A20C016761A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD1BA3A-19AB-49FD-9508-A20C016761A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A73066E-39E4-49B2-BD3C-5F6485C365A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A73066E-39E4-49B2-BD3C-5F6485C365A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A73066E-39E4-49B2-BD3C-5F6485C365A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A73066E-39E4-49B2-BD3C-5F6485C365A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
