@@ -17,16 +17,18 @@ namespace Receiver
 
         private void Run()
         {
+            // Initialize
             MessageQueue msMq2 = new MessageQueue(@".\private$\Q2csharp");
             msMq2.Formatter = new XmlMessageFormatter(new Type[] { typeof(Customer) });
-
             Console.WriteLine("***** RECEIVER *****");
 
-            var customer = (Customer)msMq2.Receive().Body;
+            // Receive messages
+            while (true)
+            {
+                var customer = (Customer)msMq2.Receive().Body;
 
-            Console.WriteLine("Customer object recieved with the name: "+ customer.Name + " and age: " + customer.Age + ".");
-
-            Console.ReadLine();
+                Console.WriteLine("Customer object recieved with the name: " + customer.Name + " and age: " + customer.Age + ".");
+            }
         }
     }
 }

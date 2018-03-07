@@ -43,18 +43,24 @@ namespace Sender
 
             Console.WriteLine("***** SENDER *****");
 
-            // Request userinput
-            Console.WriteLine("What is your name?");
+            // Request userinput and send to translator
+            while (true)
+            {
+                string message = HandleNewCustomer();
+
+                msMq1.Send(message);
+            }
+        }
+
+        private string HandleNewCustomer()
+        {
+            Console.WriteLine("New customer");
+            Console.WriteLine("Enter the name:");
             string customerName = Console.ReadLine();
-            Console.WriteLine("How old are you?");
+            Console.WriteLine("Enter the age");
             int customerAge = Int32.Parse(Console.ReadLine());
 
-            // Send message to translator
-            string message = @"<Customer><Name>" + customerName + @"</Name><Age>" + customerAge + @"</Age></Customer>";
-
-            msMq1.Send(message);
-
-            Console.ReadLine();
+            return @"<Customer><Name>" + customerName + @"</Name><Age>" + customerAge + @"</Age></Customer>";
         }
     }
 }

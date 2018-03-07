@@ -25,17 +25,22 @@ namespace Translator
 
             Console.WriteLine("***** TRANSLATOR *****");
 
-            var message = (string)msMq1.Receive().Body;
-
-
-            using (TextReader sr = new StringReader(message))
+            while (true)
             {
-                var serializer = new XmlSerializer(typeof(Customer));
-                Customer customer = (Customer)serializer.Deserialize(sr);
-                // send
-                Console.WriteLine("Translated a XML document to a Customer object with the name: " + customer.Name + " and age: " +customer.Age + ".");
-                msMq2.Send(customer);
-                Console.ReadLine();
+                // Receive message from sender
+                var message = (string)msMq1.Receive().Body;
+
+                using (TextReader stringReader = new StringReader(message))
+                {
+                    // Translate message
+                    var serializer = new XmlSerializer(typeof(Customer));
+                    Customer customer = (Customer)serializer.Deserialize(stringReader);
+
+                    // send
+                    Console.WriteLine("Translated a XML document to a Customer object with the name: " + customer.Name + " and age: " + customer.Age + ".");
+                    Console.WriteLine("Forwarded Customer object to receiver");
+                    msMq2.Send(customer);
+                }
             }
         }
     }
